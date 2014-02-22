@@ -1,4 +1,8 @@
 Tammany::Application.routes.draw do
+  
+  resources :caseworkers, only: [:show, :index]
+  resources :issue, except: [:destroy]
+
   devise_for :caseworkers
 
   # The priority is based upon order of creation:

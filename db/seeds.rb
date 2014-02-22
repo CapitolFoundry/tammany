@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+%w(Houing Santiation Transportation).each do |agency|
+  Agency.create(name: agency)
+end
+
+%w(Open Closed Deferred).each do |status|
+  Status.create(name: status)
+end
+
+%w(High Medium Low).each do |level| #keep in order from high to low so they can be ordered by id
+  PriorityLevel.create(name: level)
+end

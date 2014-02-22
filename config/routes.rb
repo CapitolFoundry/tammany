@@ -1,4 +1,6 @@
 Tammany::Application.routes.draw do
+  devise_for :caseworkers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  date: 2014-02-22
+  location: MyString
+  priority_level: 
+  agency: 
+  status: 
+  caseworker: 
+
+two:
+  description: MyText
+  date: 2014-02-22
+  location: MyString
+  priority_level: 
+  agency: 
+  status: 
+  caseworker: 

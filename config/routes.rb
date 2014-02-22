@@ -1,6 +1,7 @@
 Tammany::Application.routes.draw do
-  get "pages/home"
-  resources :page
+  # get "pages/home"
+  get "page/confirm"
+  # resources :page
   
 
   devise_for :caseworkers

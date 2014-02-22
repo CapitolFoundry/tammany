@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140222195444) do
+ActiveRecord::Schema.define(:version => 20140222215727) do
+
+  create_table "agencies", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "caseworkers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -32,5 +38,54 @@ ActiveRecord::Schema.define(:version => 20140222195444) do
 
   add_index "caseworkers", ["email"], :name => "index_caseworkers_on_email", :unique => true
   add_index "caseworkers", ["reset_password_token"], :name => "index_caseworkers_on_reset_password_token", :unique => true
+
+  create_table "constituents", :force => true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "address"
+    t.string   "cell"
+    t.string   "landline"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "issue_updates", :force => true do |t|
+    t.text     "note"
+    t.integer  "issue_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "issue_updates", ["issue_id"], :name => "index_issue_updates_on_issue_id"
+
+  create_table "issues", :force => true do |t|
+    t.text     "description"
+    t.date     "date"
+    t.string   "location"
+    t.integer  "priority_level_id"
+    t.integer  "agency_id"
+    t.integer  "status_id"
+    t.integer  "caseworker_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "issues", ["agency_id"], :name => "index_issues_on_agency_id"
+  add_index "issues", ["caseworker_id"], :name => "index_issues_on_caseworker_id"
+  add_index "issues", ["priority_level_id"], :name => "index_issues_on_priority_level_id"
+  add_index "issues", ["status_id"], :name => "index_issues_on_status_id"
+
+  create_table "priority_levels", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

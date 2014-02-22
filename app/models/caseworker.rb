@@ -6,5 +6,8 @@ class Caseworker < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
+  
+  attr_accessible :name, :title
+  
+  has_many :issues
 end

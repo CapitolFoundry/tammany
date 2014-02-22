@@ -48,3 +48,6 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem 'foundation-rails'
+

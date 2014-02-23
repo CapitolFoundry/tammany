@@ -26,6 +26,7 @@ class Issue < ActiveRecord::Base
   end
   
   def send_confirm_sms
+    unless Rails.env == "development"
     from_number = "+17188784925"
     to_number = "+13143244262"
     issue_id = self.id
@@ -34,6 +35,7 @@ class Issue < ActiveRecord::Base
       :body => "Your representative has received your issue. It is ID# #{issue_id}.",
       :to => to_number,
       :from => from_number)
+    end
   end
 
 end

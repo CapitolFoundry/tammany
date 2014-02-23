@@ -1,11 +1,43 @@
-<h1>Issues#edit</h1>
-<p>Find me in app/views/issues/edit.html.erb</p>
+<div class="row">
+<h1>Edit and Issue</h1>
 
 <%= simple_form_for @issue do |f| %>
-  <%= f.association :caseworker %>
-  <%= f.association :status %>
-  <%= f.fields_for @issue_update do |update| %>
-    <%= update.input :note %>
-  <% end %>
-  <%= f.button :submit %>
+
+<div class="row">
+  <div class="large-2  large-offset-1 columns">
+    <%= f.label :caseworker, "Case Worker" %>
+  </div>
+  <div class="large-6 columns end">
+    <%= f.association :caseworker, :label => false %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-2  large-offset-1 columns">
+    <%= f.label :status, "Status" %>
+  </div>
+  <div class="large-6 columns end">
+    <%= f.association :status, :label => false %>
+  </div>
+</div>
+    
+<%= f.fields_for @issue_update do |update| %>
+
+<div class="row">
+  <div class="large-2  large-offset-1 columns">
+    <%= update.label :note, "Note" %>
+  </div>
+  <div class="large-6 columns end">
+    <%= update.input :note, :label => false %>
+  </div>
+</div>
+
+<% end %>
+<br />
+
+<div class="row">
+  <div class="large-8  large-offset-1 columns end">
+    <%= f.button :submit %>
+  </div>
 <% end%>
+</div>

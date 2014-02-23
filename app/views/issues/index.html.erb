@@ -1,2 +1,16 @@
-<h1>Issues#index</h1>
-<p>Find me in app/views/issues/index.html.erb</p>
+<h1>Issues</h1>
+
+<div class="row">
+<div class="large-4">
+<% @issues.each do |issue| %>
+	<div class="row">
+		<div class="issue">
+			<h3><%= issue.name %>  |  <small class ="priority level"><%= issue.priority_level %></small></h3>
+			
+			<p>Date Created:<%= issue.created_at %> Status: <%= issue.status %></p>
+		</div>
+	</div>
+<% end %>
+
+</div>
+</div>

@@ -1,10 +1,10 @@
 class IssuesController < ApplicationController
   def index
-    @issues = Issues.all
+    @issues = Issue.all
   end
 
   def show
-    @issue = Issue.includes(:issue_update).find(params[:id])
+    @issue = Issue.includes(:issue_updates).find(params[:id])
   end
 
   def new
@@ -19,7 +19,14 @@ class IssuesController < ApplicationController
     @issue.constituent = @constituent
     @issue.caseworker = current_caseworker
     
-    @issue.save
+
+    if @issue.save
+      flash[:notice] = "New Issue Created"
+      redirect_to page_dashboard_path
+    else
+      flash[:error] = "There was a problem, try again"
+      redirect_to :new
+    end
     
   end
 

@@ -1,6 +1,6 @@
 Tammany::Application.routes.draw do
   
-  resources :caseworkers, only: [:show, :index]
+  
   resources :issues, except: [:destroy]
 
   # get "pages/home"
@@ -8,6 +8,7 @@ Tammany::Application.routes.draw do
   # resources :page
 
   devise_for :caseworkers
+  resources :caseworkers, only: [:show, :index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

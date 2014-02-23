@@ -17,6 +17,7 @@ group :production do
 end
 
 gem 'devise'
+gem 'faker'
 
 
 # Gems used only for assets and not required

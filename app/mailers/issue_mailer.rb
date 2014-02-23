@@ -4,6 +4,6 @@ class IssueMailer < ActionMailer::Base
   def issue_create(constituent, description)
     @constituent = constituent
     @description = description
-    mail(to: @constituent.email, subject: "Thanks for submitting your issue")
+    mail(to: @constituent, subject: "Thanks for submitting your issue")
   end
 end

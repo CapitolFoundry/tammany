@@ -30,7 +30,6 @@ class Issue < ActiveRecord::Base
       :body => "Your representative has received your issue. It is ID# #{issue_id}.",
       :to => to_number,
       :from => from_number)
-    puts "success!"
   end
 
 end

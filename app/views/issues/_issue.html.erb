@@ -1,5 +1,5 @@
 	<div class="issue">
-			<h3><%= link_to issue.name, show  %>  |  <small class ="priority level"><%= issue.priority_level.name %></small></h3>
+			<h3><%= link_to issue.name, issue_path(issue)  %>  |  <small><%= issue.priority_level.name %></small></h3>
 			
 			<p>Date Created:<%= issue.created_at.to_date %> Status: <%= issue %></p>
 	</div>

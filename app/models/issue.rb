@@ -6,5 +6,11 @@ class Issue < ActiveRecord::Base
   
   has_many :issues
   
+  after_create :send_confirm_email
+  
+  def send_confirm_email
+    IssueMailer.issue_create(self.user.email, self.description).deliver
+  end
+  
   attr_accessible :date, :description, :location, :priority_level, :agency, :status, :caseworker
 end

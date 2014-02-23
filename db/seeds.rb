@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-%w(Houing Santiation Transportation).each do |agency|
+%w(Housing Santiation Transportation).each do |agency|
   Agency.create(name: agency)
 end
 

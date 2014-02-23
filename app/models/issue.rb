@@ -14,6 +14,10 @@ class Issue < ActiveRecord::Base
   after_create :send_confirm_sms
   
   accepts_nested_attributes_for :issue_updates
+  
+  def name
+    "#{constituent.lname}-#{id}"
+  end
  
   private
   

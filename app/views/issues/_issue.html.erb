@@ -1,5 +1,8 @@
 	<div class="issue">
-			<h3><%= link_to issue.name, issue_path(issue)  %>  |  <small><%= issue.priority_level.name %></small></h3>
+			<h3><%= link_to issue.name, issue_path(issue)  %> <small>Priority: <%= issue.priority_level.name %></small></h3>
 			
-			<p>Date Created:<%= issue.created_at.to_date %></p> Status: <%= issue.status.name %></p>
+			<p>Date Created: <%= issue.created_at.to_date %> <br />
+      Status: <%= issue.status.name %> <br />
+      <%= link_to 'View Issue Details', issue_path(issue)  %> | <%= link_to("Create an Update", edit_issue_path(issue)) %>
+      </p>
 	</div>

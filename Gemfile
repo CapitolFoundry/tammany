@@ -53,3 +53,5 @@ gem 'simple_form'
 
 gem 'foundation-rails'
 
+gem "letter_opener", :group => :development
+

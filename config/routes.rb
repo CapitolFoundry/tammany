@@ -1,14 +1,11 @@
 Tammany::Application.routes.draw do
-<<<<<<< HEAD
   
   resources :caseworkers, only: [:show, :index]
-  resources :issue, except: [:destroy]
-=======
+  resources :issues, except: [:destroy]
+
   # get "pages/home"
   get "page/confirm"
   # resources :page
-  
->>>>>>> master
 
   devise_for :caseworkers
 

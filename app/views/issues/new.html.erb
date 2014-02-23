@@ -1,2 +1,19 @@
 <h1>Issues#new</h1>
 <p>Find me in app/views/issues/new.html.erb</p>
+<%= simple_form_for @issue do |f| %>
+  <%= f.input :date %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.association :agency %>
+  <%= f.association :priority_level %>
+  <%= f.association :status %>
+  <%= f.fields_for @constituent do |c| %>
+    <%= c.input :fname %>
+    <%= c.input :lname %>
+    <%= c.input :address %>
+    <%= c.input :cell %>
+    <%= c.input :landline %>
+    <%= c.input :email %>
+  <% end %>
+  <%= f.button :submit %>
+<% end%>

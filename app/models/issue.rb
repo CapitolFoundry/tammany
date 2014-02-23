@@ -6,5 +6,5 @@ class Issue < ActiveRecord::Base
   
   has_many :issues
   
-  attr_accessible :date, :description, :location, :priority_level, :agency, :status, :caseworker
+  attr_accessible :date, :description, :location, :priority_level, :agency, :status, :caseworker, :constituent
 end

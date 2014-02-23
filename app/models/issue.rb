@@ -27,7 +27,7 @@ class Issue < ActiveRecord::Base
     issue_id = self.id
     @client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV['TWILIO_TOKEN']
     @client.account.sms.messages.create(
-      :body => "Your issue has been created. It is ID# #{issue_id}.",
+      :body => "Your representative has received your issue. It is ID# #{issue_id}.",
       :to => to_number,
       :from => from_number)
     puts "success!"

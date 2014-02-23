@@ -5,15 +5,22 @@
 	background: white;
 	width: 100%;
 	hieght: 40;
+
+}
+
+.header .logo h2 {
+	color: #1e1e1e;
 }
 
 .logo {
 	padding-left: 20px;
+	color: lightgray;
 }
 
 .menu {
 	padding-top: 15px;
 	padding-right: 15px;
+
 }
 .menu a {
 	color: #1e1e1e;
@@ -43,6 +50,8 @@ a {
 .home {
 	height:500px;
 	background: url('/images/home1.jpg');
+	width: 100%;
+	repeat: no-repeat;
 
 }
 
@@ -52,7 +61,6 @@ a {
 }
 
 .number {
-	padding-bottom: 20 px;
 	margin-top: -30px;
 	background: #bc3952;
 	color: white;
@@ -86,7 +94,9 @@ ul li p {
 /* issues feed */
 
 .issues {
-	border-bottom: solid 1px black;
+	border-bottom: solid 1px lightgray;
+	color: lightgray;
+
 }
 
 /* updates feed */

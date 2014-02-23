@@ -15,30 +15,32 @@
 
   <body>
   <!-- header -->
-    <div class="header">
+    <div class="header clearfix">
       <div class="left logo"><h2>TAMMANY</h2></div>
       
       <div class="right">
         <% if caseworker_signed_in? %>
           <%= link_to('Logout', destroy_caseworker_session_path, :method => :delete) %>        
         <% else %>
-          <div class="menu"><%= link_to('Login', new_caseworker_session_path)  %></div>
+          <div class="menu"><p>For Constitent Services  </p> <%= link_to "About", root_path %><%= link_to('Login', new_caseworker_session_path)  %></div>
         <% end %>
         </div>
       </div>
     </div>
-    
+
+   
    
 
-    <%= yield %>
+      <%= yield %>
+  
+      <div class="row footer">
+        <div class="large-6 large-offeset-1">
+        </div>
+        <div class="large-4">
+          <p>contact<p>
+        </div>
+      </div>
 
-    <div class="row footer">
-      <div class="large-6 large-offeset-1">
-      </div>
-      <div class="large-4">
-        <p>contact<p>
-      </div>
-    </div>
 
     <%= javascript_include_tag "application" %>
   </body>

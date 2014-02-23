@@ -1,19 +1,122 @@
-<h1>Issues#new</h1>
-<p>Find me in app/views/issues/new.html.erb</p>
-<%= simple_form_for @issue do |f| %>
-  <%= f.input :date %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.association :agency %>
-  <%= f.association :priority_level %>
-  <%= f.association :status %>
-  <%= f.fields_for @constituent do |c| %>
-    <%= c.input :fname %>
-    <%= c.input :lname %>
-    <%= c.input :address %>
-    <%= c.input :cell %>
-    <%= c.input :landline %>
-    <%= c.input :email %>
-  <% end %>
-  <%= f.button :submit %>
-<% end%>
+<div class="row">
+  <h1>Create a New Issue</h1>
+  <%= simple_form_for @issue do |f| %>
+  <h3>Constituent Information</h3>
+    <%= f.fields_for @constituent do |c| %>
+    
+    <div class="row">
+      <div class="large-2  large-offset-1 columns">
+        <%= c.label :fname, "First Name" %>
+      </div>
+      <div class="large-6 columns end">
+        <%= c.input :fname, :label => false %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-2  large-offset-1 columns">
+        <%= c.label :lname, "Last Name" %>
+      </div>
+      <div class="large-6 columns end">
+        <%= c.input :lname, :label => false %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-2  large-offset-1 columns">
+        <%= c.label :address, "Address" %>
+      </div>
+      <div class="large-6 columns end">
+        <%= c.input :address, :label => false %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-2  large-offset-1 columns">
+        <%= c.label :cell, "Cell Phone" %>
+      </div>
+      <div class="large-6 columns end">
+        <%= c.input :cell, :label => false %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-2  large-offset-1 columns">
+        <%= c.label :landline, "Home Phone" %>
+      </div>
+      <div class="large-6 columns end">
+        <%= c.input :landline, :label => false %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-2  large-offset-1 columns">
+        <%= c.label :email, "Email" %>
+      </div>
+      <div class="large-6 columns end">
+        <%= c.input :email, :label => false %>
+      </div>
+    </div>
+    <% end %>
+  
+  <h3>Issue Information</h3>
+  <div class="row">
+    <div class="large-2  large-offset-1 columns">
+      <%= f.label :date, "Date" %>
+    </div>
+    <div class="large-6 columns end">
+      <%= f.input :date, :label => false %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-2  large-offset-1 columns">
+      <%= f.label :description, "Description" %>
+    </div>
+    <div class="large-6 columns end">
+      <%= f.input :description, :label => false %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-2  large-offset-1 columns">
+      <%= f.label :location, "Location" %>
+    </div>
+    <div class="large-6 columns end">
+      <%= f.input :location, :label => false %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-2  large-offset-1 columns">
+      <%= f.label :agency, "Agency" %>
+    </div>
+    <div class="large-6 columns end">
+      <%= f.association :agency, :label => false %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-2  large-offset-1 columns">
+      <%= f.label :priority_level, "Priority Level" %>
+    </div>
+    <div class="large-6 columns end">
+      <%= f.association :priority_level, :label => false %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-2  large-offset-1 columns">
+      <%= f.label :status, "Status" %>
+    </div>
+    <div class="large-6 columns end">
+      <%= f.association :status, :label => false %>
+    </div>
+  </div>
+    
+  
+    
+    <%= f.button :submit %>
+  <% end%>
+
+</div>

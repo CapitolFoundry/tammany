@@ -1,12 +1,11 @@
 <div class="issue">
-		<h3><%= @issue.name %>  |  <small class ="priority level"><%= @issue.priority_level.name %></small></h3>
+		<h3><%= @issue.name %>  |  <small><%= @issue.priority_level.name %></small></h3>
 		
 		<p>Date Created:<%= @issue.created_at.to_date %> Status: <%= @issue.status.name %></p>
     
     <p>Description: <%= @issue.description%>
       
     <p>Caseworker: <%= @issue.caseworker.name %>
-	</div>
 </div>
 
 <%= render @issue.constituent %>

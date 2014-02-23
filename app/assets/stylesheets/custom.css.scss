@@ -1,6 +1,26 @@
 
 /* sitewide */
 
+.header {
+	background: white;
+	width: 100%;
+	hieght: 40;
+}
+
+.logo {
+	padding-left: 20px;
+}
+
+.menu {
+	padding-top: 15px;
+	padding-right: 15px;
+}
+.menu a {
+	color: #1e1e1e;
+	margin-top: 15px;
+	padding-top: 15px;
+}
+
 .center {
 	text-align: center;
 }
@@ -9,19 +29,33 @@ a {
 	color: green;
  }
 
+ body {
+ 	background: #1e1e1e;
+ }
+
+ nav {
+ 	background: white;
+ }
+
 /* home page */
+
 
 .home {
 	height:500px;
 	background: url('/images/home1.jpg');
+
 }
 
+
 .intro {
-	margin-top: -25px;
+	background: white;
 }
 
 .number {
-	padding-bottom: 25px;
+	padding-bottom: 20 px;
+	margin-top: -30px;
+	background: #bc3952;
+	color: white;
 }
 
 .title {
@@ -42,6 +76,11 @@ ul li p {
 	padding: 30px;
 	border: 3px solid black;
 	margin: 40px;
+	color: white;
+}
+
+.pitch h3 {
+	color: white;
 }
 
 /* issues feed */

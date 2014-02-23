@@ -1,6 +1,6 @@
 Tammany::Application.routes.draw do
   
-  
+  get "page/dashboard"
   resources :issues, except: [:destroy]
 
   # get "pages/home"

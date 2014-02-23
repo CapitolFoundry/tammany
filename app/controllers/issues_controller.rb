@@ -21,10 +21,6 @@ class IssuesController < ApplicationController
     
     @issue.save
     
-    if @issue.save
-      send_confirm_sms
-    end
-    
   end
 
   def edit

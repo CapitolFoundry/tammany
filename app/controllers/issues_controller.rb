@@ -39,6 +39,8 @@ class IssuesController < ApplicationController
     @issue = Issue.find(params[:id])
     @issue.update_attributes(params[:issue].reject{ |k,v| k == 'issue_update' })
     @issue_update = IssueUpdate.create(issue: @issure, note: params[:issue][:issue_update][:note])
+    
+    redirect_to page_dashboard_path
   end
   
   private

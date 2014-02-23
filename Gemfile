@@ -62,3 +62,5 @@ gem 'foundation-rails'
 
 gem "letter_opener", :group => :development
 
+gem "twilio-ruby"
+

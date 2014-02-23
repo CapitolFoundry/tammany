@@ -1,10 +1,14 @@
 Tammany::Application.routes.draw do
+  
+  
+  resources :issues, except: [:destroy]
+
   # get "pages/home"
   get "page/confirm"
   # resources :page
-  
 
   devise_for :caseworkers
+  resources :caseworkers, only: [:show, :index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

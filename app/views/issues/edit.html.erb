@@ -1,0 +1,11 @@
+<h1>Issues#edit</h1>
+<p>Find me in app/views/issues/edit.html.erb</p>
+
+<%= simple_form_for @issue do |f| %>
+  <%= f.association :caseworker %>
+  <%= f.association :status %>
+  <%= f.fields_for @issue_update do |update| %>
+    <%= update.input :note %>
+  <% end %>
+  <%= f.button :submit %>
+<% end%>

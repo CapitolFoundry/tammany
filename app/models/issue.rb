@@ -5,13 +5,19 @@ class Issue < ActiveRecord::Base
   belongs_to :caseworker
   belongs_to :constituent
   
-  has_many :issues
-  
+  has_many :issue_updates
+
+  attr_accessible :date, :description, :location, :priority_level, :agency, :status, :caseworker, :constituent,
+    :priority_level_id, :agency_id, :status_id, :caseworker_id, :constituent_id, :issue_updates_attributes, :issue_update
+
   after_create :send_confirm_email
+  
+  accepts_nested_attributes_for :issue_updates
+ 
+  private
   
   def send_confirm_email
     IssueMailer.issue_create(self.constituent.email, self.description).deliver
   end
-  
-  attr_accessible :date, :description, :location, :priority_level, :agency, :status, :caseworker, :constituent
+
 end

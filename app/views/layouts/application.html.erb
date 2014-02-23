@@ -15,19 +15,19 @@
 
   <body>
   <!-- header -->
-    <div class="row">
-      <div class="small-6 large-3 columns"><h2>TAMMANY</h2></div>
-      <div class="small-4 large-2 columns"></div>
-      <div class="small-4 large-2 columns"></div>
-      <div class="small-4 large-2 columns"></div>
-      <div class="small-6 large-2 columns"><h4>
+    <div class="header">
+      <div class="left logo"><h2>TAMMANY</h2></div>
+      
+      <div class="right">
         <% if caseworker_signed_in? %>
           <%= link_to('Logout', destroy_caseworker_session_path, :method => :delete) %>        
         <% else %>
-          <%= link_to('Login', new_caseworker_session_path)  %>  
+          <div class="menu"><%= link_to('Login', new_caseworker_session_path)  %></div>
         <% end %>
-      </h4></div>
+        </div>
+      </div>
     </div>
+    
    
 
     <%= yield %>

@@ -20,6 +20,11 @@ class IssuesController < ApplicationController
     @issue.caseworker = current_caseworker
     
     @issue.save
+    
+    if @issue.save
+      send_confirm_sms
+    end
+    
   end
 
   def edit
@@ -32,4 +37,7 @@ class IssuesController < ApplicationController
     @issue.update_attributes(params[:issue].reject{ |k,v| k == 'issue_update' })
     @issue_update = IssueUpdate.create(issue: @issure, note: params[:issue][:issue_update][:note])
   end
+  
+  private
+  
 end

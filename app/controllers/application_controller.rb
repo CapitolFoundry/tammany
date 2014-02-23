@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_caseworker!
   
   def after_sign_in_path_for(caseworker)
-    page_confirm_path
+    page_dashboard_path
   end
   
 end

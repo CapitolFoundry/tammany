@@ -10,7 +10,9 @@
   </div>
 
   <%= render @issue.constituent %>
+  
 
+  <h4> Updates</h4>
   <%= render @issue.issue_updates %>
 
   <%= link_to("Update", edit_issue_path(@issue), :class => 'button') %>

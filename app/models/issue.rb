@@ -9,7 +9,7 @@ class Issue < ActiveRecord::Base
   after_create :send_confirm_email
   
   def send_confirm_email
-    IssueMailer.issue_create(self.user.email, self.description).deliver
+    IssueMailer.issue_create(self.constituent.email, self.description).deliver
   end
   
   attr_accessible :date, :description, :location, :priority_level, :agency, :status, :caseworker

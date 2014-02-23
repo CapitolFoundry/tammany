@@ -17,7 +17,7 @@ class Issue < ActiveRecord::Base
   private
   
   def send_confirm_email
-    IssueMailer.issue_create(self.constituent.email, self.description).deliver
+    IssueMailer.issue_create(self.constituent.email, self.id, self.description).deliver
   end
 
 end

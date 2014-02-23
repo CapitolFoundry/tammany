@@ -12,7 +12,12 @@ a {
 /* home page */
 
 .home {
-	height:300px;
+	height:500px;
+	background: url('home1.jpg');
+}
+
+.intro {
+	margin-top: -25px;
 }
 
 .number {
@@ -28,6 +33,7 @@ a {
 ul li p { 
 	text-align: justify;
 	padding: 10px 25px;
+
 }
 
 
